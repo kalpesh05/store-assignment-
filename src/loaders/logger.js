@@ -24,7 +24,7 @@ if (process.env.NODE_ENV !== "development") {
       silent: false,
       colorize: true,
       timestamp: true,
-      filename: "./one-step-away.log",
+      filename: "./online-store.log",
       maxsize: 40000,
       maxFiles: 10,
       json: false

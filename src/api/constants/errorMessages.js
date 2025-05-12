@@ -20,14 +20,6 @@ exports.USER_NOT_FOUND = "400::User not found.";
 exports.USER_NOT_ALLOWED = "400::User not allowed.";
 exports.INVALID_PASSWORD_TOKEN =
   "401::Password reset token is invalid or has expired.";
-exports.PROFILE_IMAGE_URL = "400::image url is invalid.";
-exports.LINKED_IN_URL = "400::LinkedIn url is invalid.";
-exports.LOCATION = "400::Location is invalid.";
-exports.PRIMARY_PHONE = "400::Primary phone is invalid.";
-exports.SECONDARY_PHONE = "400::Secondary phone is invalid.";
-exports.GENDER = "400::Gender is invalid.";
-exports.PERSONAL_WEBSITE = "400::Personal website is invalid.";
-exports.PROFILE_TITLE = "400::Profile is invalid.";
 exports.USER_NOT_FOUND = "400::User not found.";
-exports.PUBLIC_KEY_USER_NOT_FOUND =
-  "400::Public key could not find valid user.";
+exports.PRODUCT_NOT_FOUND = "400::Product not found.";
+exports.CATEGORY_NOT_FOUND = "400::Category not found.";

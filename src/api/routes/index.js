@@ -50,16 +50,67 @@ const routes = [
     path: "/user-verify-email",
     handler: "AuthController.verifyEmail"
   },
+  // Product routes
+  {
+    method: "GET",
+    path: "/products",
+    handler: "ProductController.getAll",
+    authenticate: true
+  },
+  {
+    method: "GET",
+    path: "/products/:product_id",
+    handler: "ProductController.getOne",
+    authenticate: true
+  },
   {
     method: "POST",
-    path: "/user-profile-extra-fields",
-    handler: "UserController.extraFieldCreate",
+    path: "/products",
+    handler: "ProductController.create",
     authenticate: true
   },
   {
     method: "PUT",
-    path: "/user-profile-extra-fields",
-    handler: "UserController.extraFieldUpdate",
+    path: "/products/:product_id",
+    handler: "ProductController.update",
+    authenticate: true
+  },
+  {
+    method: "DELETE",
+    path: "/products/:product_id",
+    handler: "ProductController.delete",
+    authenticate: true
+  },
+
+  // Category routes (if not already added)
+  {
+    method: "GET",
+    path: "/categories",
+    handler: "CategoryController.getAll",
+    authenticate: true
+  },
+  {
+    method: "GET",
+    path: "/categories/:category_id",
+    handler: "CategoryController.getOne",
+    authenticate: true
+  },
+  {
+    method: "POST",
+    path: "/categories",
+    handler: "CategoryController.create",
+    authenticate: true
+  },
+  {
+    method: "PUT",
+    path: "/categories/:category_id",
+    handler: "CategoryController.update",
+    authenticate: true
+  },
+  {
+    method: "DELETE",
+    path: "/categories/:category_id",
+    handler: "CategoryController.delete",
     authenticate: true
   }
 ];

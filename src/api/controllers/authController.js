@@ -14,8 +14,7 @@ const {
   LOGIN_FAILED,
   INVALID_PASSWORD_TOKEN,
   INVALID_EMAIL_TOKEN,
-  USER_NOT_FOUND,
-  USER_NOT_ALLOWED
+  USER_NOT_FOUND
 } = require("../constants/errorMessages");
 const {
   randomString,

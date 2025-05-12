@@ -6,7 +6,6 @@ const { INTERNAL_SERVER_ERROR } = require("../constants/errorMessages");
 const errorHandler = (error, req, res, next) => {
   let [code, message] = INTERNAL_SERVER_ERROR.split("::");
   
-  console.log("errorHandler", error);
   
   if (error.message) {
     if (error.message.indexOf("::") > -1) {
