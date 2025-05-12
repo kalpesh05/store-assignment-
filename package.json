@@ -33,9 +33,13 @@
     "passport": "0.4.1",
     "passport-jwt": "4.0.0",
     "passport-local": "1.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "winston": "3.2.1"
   },
   "devDependencies": {
-    "nodemon": "2.0.3"
+    "jest": "^29.7.0",
+    "nodemon": "2.0.3",
+    "supertest": "^7.1.0"
   }
 }

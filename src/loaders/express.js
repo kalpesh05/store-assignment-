@@ -6,6 +6,8 @@ const config = require("../configs");
 const responseFormat = require("../api/middlewares/responseFormat");
 const passport = require("passport");
 const passportLoader = require("./passport");
+const swaggerLoader = require('./swagger');  // Import swagger loader
+
 module.exports = app => {
   app.get("/status", (req, res) => {
     res.status(200).end();
@@ -44,6 +46,9 @@ module.exports = app => {
 
   // Load API routes
   app.use(config.api.prefix, router);
+
+  // Load Swagger UI documentation
+  swaggerLoader(app);  // Add Swagger to the app
 
   /// catch 404 and forward to error handler
   app.use((req, res, next) => {

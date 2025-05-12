@@ -84,6 +84,11 @@ Main entry point for the application. Sets up middleware, routes, and starts the
 
 ---
 
+## Build and Run Docker Containers:
+
+docker-compose up --build
+
+
 ## Setup Instructions
 
 ### 1. Clone the repository:

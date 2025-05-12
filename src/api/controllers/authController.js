@@ -23,6 +23,15 @@ const {
 
 class authController {
   /**
+   * @swagger
+   * /auth/register:
+   *   post:
+   *     description: Register a new user
+   *     responses:
+   *       201:
+   *         description: User successfully registered
+   */
+    /**
    * Register
    * @param req
    * @param res
@@ -60,6 +69,15 @@ class authController {
   }
 
   /**
+   * @swagger
+   * /auth/login:
+   *   post:
+   *     description: Login an existing user
+   *     responses:
+   *       200:
+   *         description: User successfully logged in
+   */
+  /**
    * Login
    * @param req
    * @param res
@@ -67,7 +85,7 @@ class authController {
    * @returns {Promise<*>}
    */
   async login(req, res, next) {
-    passport.authenticate("login", function(err, user) {
+    passport.authenticate("login", function (err, user) {
       try {
         // let role = req.body.role ? req.body.role : "user";
 
