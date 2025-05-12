@@ -23,3 +23,14 @@ exports.INVALID_PASSWORD_TOKEN =
 exports.USER_NOT_FOUND = "400::User not found.";
 exports.PRODUCT_NOT_FOUND = "400::Product not found.";
 exports.CATEGORY_NOT_FOUND = "400::Category not found.";
+exports.PRODUCT_NAME = "Product name must be between 2 to 50 characters.";
+exports.PRODUCT_DESCRIPTION = "Product description should not exceed 500 characters.";
+exports.PRODUCT_PRICE = "Price must be a positive number.";
+exports.PRODUCT_STOCK = "Stock must be a non-negative integer.";
+exports.PRODUCT_IMAGE_URL = "Invalid product image URL.";
+exports.CATEGORY_ID = "Category ID is required.";
+
+
+// Category
+exports.CATEGORY_NAME= "Category name must be between 2 to 50 characters.";
+exports.CATEGORY_DESCRIPTION= "Category description should not exceed 300 characters.";

@@ -29,21 +29,6 @@ const schema = {
     type: String,
     default: ""
   },
-  address: {
-    type: Object,
-    default: { city: null, state: null, street: null, zip: null }
-  },
-  location: {
-    type: {
-      type: String,
-      enum: ['Point'],
-      default: 'Point',
-    },
-    coordinates: {
-      type: [Number],
-      default: [0, 0],
-    }
-  },
   mobile_no: {
     type: String
   },

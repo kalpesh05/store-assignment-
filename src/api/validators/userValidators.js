@@ -30,20 +30,4 @@ exports.updateProfile = Joi.object().keys({
     .optional()
 });
 
-exports.extraFieldCreate = Joi.object().keys({
-  heading: Joi.string()
-    .error(new Error(errorMessages.USER_EXTRA_FIELD_HEADING))
-    .required(),
-  body: Joi.string()
-    .error(new Error(errorMessages.USER_EXTRA_FIELD_BODY))
-    .required(),
-  index: Joi.number()
-    .error(new Error(errorMessages.USER_EXTRA_FIELD_INDEX))
-    .required()
-});
 
-exports.extraFieldUpdate = Joi.object().keys({
-  heading: Joi.string().error(new Error(errorMessages.USER_EXTRA_FIELD_HEADING)),
-  body: Joi.string().error(new Error(errorMessages.USER_EXTRA_FIELD_BODY)),
-  index: Joi.number().error(new Error(errorMessages.USER_EXTRA_FIELD_INDEX))
-});
