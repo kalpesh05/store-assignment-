@@ -1,4 +1,4 @@
-const productValidator = require('../api/validators/productValidators');
+const productValidator = require('../../api/validators/productValidators');
 
 describe('Product Validator', () => {
   it('should validate a valid product payload', () => {
