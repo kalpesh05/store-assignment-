@@ -4,9 +4,10 @@ require("./loaders/mongoose");
 
 const { port } = require("./configs");
 
-const { expressLoader, logger } = require("./loaders");
+const { expressLoader, logger, swaggerLoader} = require("./loaders");
 
 expressLoader(app);
+swaggerLoader(app);
 
 app.listen(port, err => {
   if (err) {

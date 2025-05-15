@@ -541,3 +541,4 @@ routes.forEach(route => {
 });
 
 exports.router = router;
+exports.routes = routes;
