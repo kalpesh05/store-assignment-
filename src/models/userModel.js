@@ -4,10 +4,7 @@ const schema = {
   _id: {
     type: String
   },
-  first_name: {
-    type: String
-  },
-  last_name: {
+  user_name: {
     type: String
   },
   email: {
@@ -24,10 +21,6 @@ const schema = {
   },
   role_id: {
     type: String,
-  },
-  avatar_image_url: {
-    type: String,
-    default: ""
   },
   mobile_no: {
     type: String

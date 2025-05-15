@@ -12,20 +12,20 @@ const CategorySchema = new mongoose.Schema(
       type: String,
       default: '',
     },
-    parentCategory: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Category',
-      default: null,
-      autopopulate: true, // optional
-    },
     status: {
       type: String,
       enum: ['active', 'inactive'],
       default: 'active',
     },
     createdBy: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      type: mongoose.Schema.Types.String,
+      ref: 'user',
+      required: true,
+      autopopulate: true,
+    },
+    updatedBy: {
+      type: mongoose.Schema.Types.String,
+      ref: 'user',
       required: true,
       autopopulate: true,
     },

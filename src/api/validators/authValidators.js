@@ -8,15 +8,10 @@ exports.register = Joi.object().keys({
     .email()
     .error(new Error(errorMessages.EMAIL))
     .required(),
-  first_name: Joi.string()
+  user_name: Joi.string()
     .min(3)
     .max(15)
-    .error(new Error(errorMessages.FIRST_NAME))
-    .required(),
-  last_name: Joi.string()
-    .min(1)
-    .max(15)
-    .error(new Error(errorMessages.LAST_NAME))
+    .error(new Error(errorMessages.USER_NAME))
     .required(),
   password: Joi.string()
     .min(8)
@@ -25,14 +20,11 @@ exports.register = Joi.object().keys({
   gender: Joi.string()
     .error(new Error(errorMessages.GENDER))
     .optional(),
-    mobile_no: Joi.string()
+  mobile_no: Joi.string()
     .error(new Error(errorMessages.MOBILE_NO))
     .optional(),
   role_id: Joi.string()
     .error(new Error(errorMessages.ROLE))
-    .optional(),
-  avatar_image_url: Joi.string()
-    .error(new Error(errorMessages.PROFILE_IMAGE_URL))
     .optional()
 });
 

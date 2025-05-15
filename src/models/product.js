@@ -37,10 +37,20 @@ const ProductSchema = new mongoose.Schema(
       default: 'active',
     },
     createdBy: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      type: mongoose.Schema.Types.String,
+      ref: 'user',
       required: true,
       autopopulate: true,
+    },
+    updatedBy: {
+      type: mongoose.Schema.Types.String,
+      ref: 'user',
+      required: true,
+      autopopulate: true,
+    },
+    deleted_at: {
+      type: Date,
+      default: null
     },
   },
   {

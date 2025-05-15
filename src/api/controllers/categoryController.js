@@ -1,14 +1,16 @@
 const { categoryService } = require('../../services');
 const {
   DATABASE_INTERNAL,
-  CATEGORY_NOT_FOUND
+  CATEGORY_NOT_FOUND,
+  USER_NOT_ALLOWED
 } = require('../constants/errorMessages');
 
 class CategoryController {
   async getAll(req, res, next) {
-    const { limit = 10, skip = 0, ...query } = req.query;
+    const { limit = 10, page = 0, ...query } = req.query;
 
     try {
+      let skip = parseInt(page) > 0 ? parseInt(page) - 1 : parseInt(page);
       const result = await categoryService.getAllWhere(query, parseInt(limit), parseInt(skip));
       return res.json({ message: '', ...result });
     } catch (e) {
@@ -30,8 +32,12 @@ class CategoryController {
   async create(req, res, next) {
     const { body } = req;
     try {
-      body.created_by = req.user._id;
-      body.updated_by = req.user._id;
+      body.createdBy = req.user.id;
+      body.updatedBy = req.user.id;
+
+      if (req.user.roles[0]._id !== "rol_1a37023fecf3005b66a1850e") {
+        throw new Error(USER_NOT_ALLOWED);
+      }
 
       const saved = await categoryService.create(body);
       if (saved.error) throw new Error(DATABASE_INTERNAL);
@@ -51,7 +57,11 @@ class CategoryController {
       const existing = await categoryService.getOneWhere({ _id: category_id });
       if (!existing) throw new Error(CATEGORY_NOT_FOUND);
 
-      body.updated_by = req.user._id;
+      if (req.user.roles[0]._id !== "rol_1a37023fecf3005b66a1850e") {
+        throw new Error(USER_NOT_ALLOWED);
+      }
+      
+      body.updatedBy = req.user.id;
 
       await categoryService.update(category_id, body);
       const updated = await categoryService.getOne(category_id);

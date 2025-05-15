@@ -330,7 +330,7 @@ class authController {
     try {
       // console.log(req.user);
       const user = await userService.getOne(req.user._id);
-
+console.log(user.roles[0].name)
       /**
        * API response
        */

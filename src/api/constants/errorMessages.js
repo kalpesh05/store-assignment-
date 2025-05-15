@@ -1,7 +1,7 @@
 exports.INTERNAL_SERVER_ERROR = "500::Something went wrong.";
 exports.EMAIL = "400::Email is not valid.";
 exports.NAME = "400::name is not valid.";
-exports.LAST_NAME = "400::Last name is not valid.";
+exports.USER_NAME = "400::User name is not valid.";
 exports.ROLE = "400::Role is not valid.";
 exports.PASSWORD = "400::Password is not valid.";
 exports.NEW_PASSWORD = "400::New password is not valid.";
